@@ -1,7 +1,7 @@
 .WrapperTable {
   background-color: var(--COLOR1);
   height: 100%;
-  width: 1536px;
+  width: 1519px;
   margin: 10px auto;
   padding: 20px;
   border-radius: 5px;
@@ -17,4 +17,7 @@ Table {
 }
 .NameTables:hover{
     text-decoration: none;
+}
+td:hover{
+  cursor: pointer;
 }

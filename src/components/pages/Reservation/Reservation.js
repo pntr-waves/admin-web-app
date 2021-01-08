@@ -60,38 +60,7 @@ function Reservation(props) {
     .toLocaleTimeString("en-US")
     .split(/:| /);
   //map to dataRender
-  var dataRender = mapDataTable(props.tables.tables).map((el) => {
-    if (el.reservation_day.length === 0 && el.reservation_night.length !== 0) {
-      return {
-        ...el,
-        //not data
-        reservation_day: ["---", "---", "---", "---", "---", "---"],
-      };
-    } else if (
-      el.reservation_night.length === 0 &&
-      el.reservation_day.length !== 0
-    ) {
-      return {
-        ...el,
-        //not data
-        reservation_night: ["---", "---", "---", "---", "---", "---"],
-      };
-    } else if (
-      el.reservation_day.length === 0 &&
-      el.reservation_night.length === 0
-    ) {
-      return {
-        ...el,
-        //not data
-        reservation_day: ["---", "---", "---", "---", "---", "---"],
-        reservation_night: ["---", "---", "---", "---", "---", "---"],
-      };
-    } else {
-      return el;
-    }
-  });
-  //data
-  console.log(dataRender);
+  
   return (
     <div className="WrapperTable">
       <p className="Title">Manage Table Reservation</p>
@@ -126,9 +95,6 @@ function Reservation(props) {
                     if (rd === "---") {
                       return <td key={rdindex}>{rd}</td>;
                     }
-                    if (rd === undefined) {
-                      return <td key={rdindex}>---</td>;
-                    }
                     if (rd.length > 0) {
                       return (
                         <td key={rdindex}>
@@ -158,28 +124,29 @@ function Reservation(props) {
                   `}</td>
                 {data.reservation_night.map((rn, rnindex) => {
                   if (rnindex < 6) {
-                    if (rn !== "---") {
-                      if (rn !== undefined) {
-                        return (
-                          <td key={rnindex}>
-                            {rn.map((el, elrnindex) => {
-                              let user = props.users.users.find((u) => {
-                                return u._id === el.userId;
-                              });
-
-                              console.log("user" + user);
-                              return <p key={elrnindex}>{user.local.name}</p>;
-                            })}
-                          </td>
-                        );
-                      } else {
-                        return <td key={rnindex}>---</td>;
-                      }
-                    } else {
+                    if (rn === "---") {
                       return <td key={rnindex}>{rn}</td>;
                     }
+                    if (rn.length > 0) {
+                      return (
+                        <td key={rnindex}>
+                          {rn.map((el, elindex) => {
+                            let user = props.users.users.find((u) => {
+                              return u._id === el.userId;
+                            });
+
+                            console.log("user" + user);
+                            return (
+                              <p
+                                key={elindex}
+                              >{`1 đơn của ${user.local.name.toUpperCase()}`}</p>
+                            );
+                          })}
+                        </td>
+                      );
+                    }
                   } else {
-                    return <td></td>;
+                    return <td key={rnindex}></td>;
                   }
                 })}
               </tr>
