@@ -1,0 +1,39 @@
+.TableDetails {
+  text-align: left;
+}
+.userInfo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.userInfo > p {
+  margin: 0;
+}
+.fas.fa-circle {
+  font-size: 10px;
+  margin-right: 5px;
+}
+.function {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.function > p {
+  margin-right: 5px;
+  margin-top: 1rem;
+}
+.function > img {
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  margin-right: 20px;
+}
+.function:hover {
+  cursor: pointer;
+}
+.noneBorder {
+  border: none;
+}
+.tbody {
+  border-bottom: 0.8px solid #e5e5e5;
+}

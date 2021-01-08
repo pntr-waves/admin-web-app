@@ -1,0 +1,20 @@
+.WrapperTable {
+  background-color: var(--COLOR1);
+  height: 100%;
+  width: 1536px;
+  margin: 10px auto;
+  padding: 20px;
+  border-radius: 5px;
+}
+.Title {
+  font-size: 30px;
+  font-weight: bold;
+  color: #e76f51;
+  margin: 5px 0px 20px 0px;
+}
+Table {
+  text-align: center;
+}
+.NameTables:hover{
+    text-decoration: none;
+}
