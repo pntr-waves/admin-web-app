@@ -18,6 +18,28 @@ Table {
 .NameTables:hover{
     text-decoration: none;
 }
+.tdInfo{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 td:hover{
   cursor: pointer;
+}
+.detailInfo{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.detailInfo p{
+  margin: 0;
+}
+.timeline{
+  width: 100%;
+  padding: 10px 10px 10px 30px;
+}
+.background{
+  background-color: var(--COLOR1);
 }

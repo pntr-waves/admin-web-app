@@ -20,13 +20,13 @@ export const tables = (
     case ActionTypes.FAILED_TABLE: {
       return {
         ...state,
-        tables: state.tables,
+        tables: [],
         errMess: action.payload,
         isLoading: false,
       };
     }
     case ActionTypes.LOADING_TABLE: {
-      return { ...state, isLoading: true };
+      return { ...state, tables: [], errMess: null, isLoading: true };
     }
     default: {
       return state;

@@ -6,21 +6,10 @@ import NavBar from "../NavBar";
 import Reservation from "./Reservation/Reservation";
 import DetailsReservation from "./DetailsReservation/DetailsReservation";
 import DishesManage from "./DishesManage/DishesManage";
+import Timeline from "./Timeline/Timeline";
 //import redux
 import { connect, useDispatch, useSelector } from "react-redux";
 import { fetchTables, fetchDishes, fetchUser } from "../../redux/ActionCreator";
-
-// const mapStateToProps = (state) => {
-//   return {
-//     tables: state.tables,
-//   };
-// };
-
-// const mapDispatchToProps = (dispatch) => {
-//   return {
-//     fetchTables: () => dispatch(fetchTables()),
-//   };
-// };
 
 function Main(props) {
   const dispatch = useDispatch();
@@ -57,6 +46,7 @@ function Main(props) {
             component={DetailsReservation}
           ></Route>
           <Route path="/dishes" component={DishesManage}></Route>
+          <Route path="/timeline/:table/:day" component={Timeline}></Route>
         </Route>
       </Switch>
     </Router>

@@ -8,15 +8,11 @@ import {
 
 //get all tables
 
-export const fetchTables = () => async (dispatch) => {
+export const fetchTables = () => (dispatch) => {
   dispatch(loadingTables());
 
-  return await axios
-    .get(get_table_url, {
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
-      },
-    })
+  return axios
+    .get(get_table_url)
     .then((res) => dispatch(addTables(res.data)))
     .catch((error) => dispatch(failedTables(error.response)));
 };
@@ -92,3 +88,12 @@ export const failedDishes = (errMess) => {
     payload: errMess,
   };
 };
+
+//add time line
+
+export const addTimeline = (timeline) => {
+  return{
+    type: ActionTypes.ADD_TIMELINE,
+    payload: timeline
+  }
+}

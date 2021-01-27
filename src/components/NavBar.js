@@ -35,6 +35,15 @@ function NavBar() {
                 DISHES
               </Link>
             </li>
+            <li className="nav-item">
+              <Link
+                to="/users"
+                className="nav-links"
+                onClick={closeMobileMenu}
+              >
+                USERS
+              </Link>
+            </li>
           </ul>
         </div>
       </nav>

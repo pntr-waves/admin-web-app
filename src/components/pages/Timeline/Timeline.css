@@ -1,0 +1,10 @@
+td.notEmpty {
+  background-color: #0b3954;
+  border-left-color: #f1faee;
+}
+i.notEmpty {
+  color: #f1faee;
+}
+.detailInfo.notEmpty {
+  color: #f1faee;
+}
